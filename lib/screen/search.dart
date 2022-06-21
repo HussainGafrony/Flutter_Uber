@@ -5,7 +5,7 @@ import 'package:google_place/google_place.dart';
 import 'package:test/screen/map_screen.dart';
 
 class SearchScreen extends StatefulWidget {
-  static String apikey = 'AIzaSyB_h5YHdaKKU9R0u4U0O3QKLy8kyjufLUs';
+  static String apikey = 'apikey';
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -14,7 +14,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final startPoint = TextEditingController();
   final endPoint = TextEditingController();
-  static String apikey = 'AIzaSyB_h5YHdaKKU9R0u4U0O3QKLy8kyjufLUs';
+
   late GooglePlace googlePlace;
   List<AutocompletePrediction> predictins = [];
   DetailsResult? startPosition;
@@ -24,7 +24,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   void initState() {
     super.initState();
-    googlePlace = GooglePlace(apikey);
+    googlePlace = GooglePlace(SearchScreen.apikey);
     startFocusNode = FocusNode();
     endFocusNode = FocusNode();
   }
